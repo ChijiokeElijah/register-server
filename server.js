@@ -7,8 +7,19 @@ const connect_DB = require('./connectDB/connectDB');
 
 const app = express();
 
+const allowedOrigins = [
+  'https://register-app-td8y.vercel.app',
+  'http://localhost:5173'
+]
+
 app.use(cors({
-  origin: ['https://register-app-td8y.vercel.app/']|| 'http://localhost:5173/', 
+  origin: function (origin, callback){
+    if(!origin || allowedOrigins.includes(origin)){
+      callback(null, true);
+    }else{
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   credentials: false
