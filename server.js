@@ -17,7 +17,7 @@ app.use(cors({
     if(!origin || allowedOrigins.includes(origin)){
       callback(null, true);
     }else{
-      callback(new Error('Not allowed by CORS'))
+      callback(new Error('Not allowed by CORS'));
     }
   },
   methods: ['GET', 'POST', 'OPTIONS'],
