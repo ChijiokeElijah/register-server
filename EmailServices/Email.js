@@ -18,12 +18,12 @@ const sendEmail = async (to, subject, body) =>{
         html: body
     }
 
-    console.log("Email service:", process.env.EMAIL_SERVICE);
-    console.log("Email user:", process.env.Email_USER);
+    // console.log("Email service:", process.env.EMAIL_SERVICE);
+    // console.log("Email user:", process.env.EMAILl_USER);
 
     await new Promise ((resolve, reject)=>{
         transporter.sendMail(emailOptions, (err, res) =>{
-            console.log("sendEmail() was called with:", to, subject);
+            // console.log("sendEmail() was called with:", to, subject);
 
             if(err){
                 console.log("Email send failed:", err);
