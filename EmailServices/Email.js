@@ -18,8 +18,8 @@ const sendEmail = async (to, subject, body) =>{
         html: body
     }
 
-    console.log("Email service:", process.env.Email_Service);
-    console.log("Email user:", process.env.Email_User);
+    console.log("Email service:", process.env.EMAIL_SERVICE);
+    console.log("Email user:", process.env.Email_USER);
 
     await new Promise ((resolve, reject)=>{
         transporter.sendMail(emailOptions, (err, res) =>{
