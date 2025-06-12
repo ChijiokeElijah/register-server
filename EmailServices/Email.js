@@ -1,9 +1,9 @@
 const nodemailer = require('nodemailer')
 
 const transporter = nodemailer.createTransport({
-    service: process.env.Email_Service,
+    service: process.env.EMAIL_Service,
     auth: {
-        user: process.env.Email_User,
+        user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     }
 
@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 const sendEmail = async (to, subject, body) =>{
     let emailOptions = {
         to,
-        from: process.env.Email_User,
+        from: process.env.EMAIL_USER,
         subject,
         html: body
     }
